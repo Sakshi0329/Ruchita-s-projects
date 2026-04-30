@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "67231527-3cce-41a0-94b0-0ae4f26ac65b",
+		"name": "ZWitch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50976706",
+		"_collection_link": "https://ruchitanjaliduvva-6024298.postman.co/workspace/Ruchitanjali-Duvva's-Workspace~8fbb66fc-aa98-45f2-88b8-c50e59e4341b/collection/50976706-67231527-3cce-41a0-94b0-0ae4f26ac65b?action=share&source=collection_link&creator=50976706"
+	},
+	"item": [
+		{
+			"name": "UPI Collect Request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "sk_test_ih2qx1OVczBBSxy7A55pPHNGDPr95Xj5Xg24",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ak_test_LkDotPjnhYUDN0ywY4Ox6vY1SWX6kdlSBb1E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n  \"remitter_vpa_handle\": \"vpa\",\n  \"expiry_in_minutes\": 10,\n  \"amount\": 500,\n  \"remark\": \"Payment for order\",\n  \"merchant_reference_id\": \"123456\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.zwitch.io/v1/accounts/7979791968585784/payments/upi/collect",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zwitch",
+						"io"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"7979791968585784",
+						"payments",
+						"upi",
+						"collect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.zwitch.io/v1/accounts/ACC_ID/payments/PAYMENT_ID",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zwitch",
+						"io"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"ACC_ID",
+						"payments",
+						"PAYMENT_ID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPI QR Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Access-Key",
+						"value": "3b3efec6-6e9c-4a97-86fd-2067700d22ef",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer ak_live_ibXvxq1DPc0ZAY6NimxP9SkAha44yc:sk_live_D5ry00k4nvp1gvCNZpc9YBYrYJHBhzVAiCyi"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n  \"amount\": \"500\",\n  \"contact_number\": \"85567567757\",\n  \"email_id\": \"eko@gmail.com\",\n  \"currency\": \"INR\",\n  \"mtx\": \"QWERT12345\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.zwitch.io/icp/upi/intent",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zwitch",
+						"io"
+					],
+					"path": [
+						"icp",
+						"upi",
+						"intent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPI Collect Payment",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "ak_test_LkDotPjnhYUDN0ywY4Ox6vY1SWX6kdlSBb1E",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "sk_test_ih2qx1OVczBBSxy7A55pPHNGDPr95Xj5Xg24",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n  \"remitter_vpa_handle\": \"ruchitanjali48@oksbi\",\n  \"amount\": 100,\n  \"expiry_in_minutes\": 10,\n  \"remark\": \"Zwitch Test Payment\",\n  \"merchant_reference_id\": \"QWERT122345\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.zwitch.io/v1/accounts/7979791968585784/payments/upi/collect",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zwitch",
+						"io"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"7979791968585784",
+						"payments",
+						"upi",
+						"collect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Account Payments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 3b3efec6-6e9c-4a97-86fd-2067700d22ef:224beff6a70dab1a0091aeaec5dd7c08c49a5d93aa574ed0bd24e940814d0abc"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://api.zwitch.io/v1/accounts/va_TnLpGch4aBbRwWtB2Y6cQqJFs/payments?results_per_page=20",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zwitch",
+						"io"
+					],
+					"path": [
+						"v1",
+						"accounts",
+						"va_TnLpGch4aBbRwWtB2Y6cQqJFs",
+						"payments"
+					],
+					"query": [
+						{
+							"key": "results_per_page",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Accounts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ak_live_ibXvxq1DPc0ZAY6NimxP9SkAha44yc:sk_live_D5ry00k4nvp1gvCNZpc9YBYrYJHBhzVAiCyi"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://api.zwitch.io/v1/accounts?results_per_page=20",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zwitch",
+						"io"
+					],
+					"path": [
+						"v1",
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "results_per_page",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

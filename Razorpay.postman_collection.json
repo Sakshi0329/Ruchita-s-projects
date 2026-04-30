@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "ac271318-3996-4cde-8536-5644cfe5bb47",
+		"name": "Razorpay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33824564"
+	},
+	"item": [
+		{
+			"name": "Create a QR Code",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"upi_qr\",\n    \"name\": \"Store_1\",\n    \"usage\": \"single_use\",\n    \"fixed_amount\": true,\n    \"payment_amount\": 300,\n    \"description\": \"For Store 1\",\n    \"customer_id\": \"cust_R78uV41l2R6p7f\",\n    \"close_by\": 1755769829,\n    \"notes\": {\n        \"purpose\": \"Test UPI QR code notes\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.razorpay.com/v1/payments/qr_codes",
+					"protocol": "https",
+					"host": [
+						"api",
+						"razorpay",
+						"com"
+					],
+					"path": [
+						"v1",
+						"payments",
+						"qr_codes"
+					]
+				},
+				"description": "You can create a QR Code using this [API](https://razorpay.com/docs/api/qr-codes/#create-a-qr-code)."
+			},
+			"response": [
+				{
+					"name": "Create a QR Code",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"upi_qr\",\n    \"name\": \"Store_1\",\n    \"usage\": \"single_use\",\n    \"fixed_amount\": true,\n    \"payment_amount\": 300,\n    \"description\": \"For Store 1\",\n    \"customer_id\": \"cust_R78uV41l2R6p7f\",\n    \"close_by\": 1755769829,\n    \"notes\": {\n        \"purpose\": \"Test UPI QR code notes\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.razorpay.com/v1/payments/qr_codes",
+							"protocol": "https",
+							"host": [
+								"api",
+								"razorpay",
+								"com"
+							],
+							"path": [
+								"v1",
+								"payments",
+								"qr_codes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 08:55:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, must-revalidate, no-store, nocache, private"
+						},
+						{
+							"key": "Expires",
+							"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=315360000; includeSubDomains"
+						},
+						{
+							"key": "Uber-Trace-Id",
+							"value": "c2ddd793f5c7db6c4afed27be7c99e09:82a63f22d347349f:0000000000000000:1"
+						},
+						{
+							"key": "Via",
+							"value": "rws"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Pam",
+							"value": "0"
+						},
+						{
+							"key": "X-Xss-Protection",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"qr_R7vT74yzwzsuZe\",\n    \"entity\": \"qr_code\",\n    \"created_at\": 1755766503,\n    \"name\": \"Store_1\",\n    \"usage\": \"single_use\",\n    \"type\": \"upi_qr\",\n    \"image_url\": \"https://rzp.io/rzp/6zxh6oO\",\n    \"payment_amount\": 300,\n    \"status\": \"active\",\n    \"description\": \"For Store 1\",\n    \"fixed_amount\": true,\n    \"payments_amount_received\": 0,\n    \"payments_count_received\": 0,\n    \"notes\": {\n        \"purpose\": \"Test UPI QR code notes\"\n    },\n    \"customer_id\": \"cust_R78uV41l2R6p7f\",\n    \"close_by\": 1755769829,\n    \"image_content\": \"upi://pay?am=3.00&cu=INR&mc=5811&mode=22&pa=bertiebotts571449.rzp@rxairtel&pn=BertieBotts&tn=PaymentToBertieBotts&tr=R7vT74yzwzsuZeqrv2\",\n    \"tax_invoice\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Create a UPI Payment",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"upi_link\": \"true\",\n  \"amount\": 1000,\n  \"currency\": \"INR\",\n  \"accept_partial\": false,\n  \"expire_by\": 1791097057,\n  \"reference_id\": \"TS1999\",\n  \"description\": \"Payment for policy no #23456\",\n  \"customer\": {\n    \"name\": \"Gaurav Kumar\",\n    \"contact\": \"+919000090000\",\n    \"email\": \"gaurav.kumar@example.com\"\n  },\n  \"notify\": {\n    \"sms\": true,\n    \"email\": true\n  },\n  \"reminder_enable\": true,\n  \"notes\": {\n    \"policy_name\": \"Jeevan Bima\"\n  },\n  \"callback_url\": \"https://example-callback-url.com/\",\n  \"callback_method\": \"get\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.razorpay.com/v1/payment_links",
+					"protocol": "https",
+					"host": [
+						"api",
+						"razorpay",
+						"com"
+					],
+					"path": [
+						"v1",
+						"payment_links"
+					]
+				},
+				"description": "You can use this [API](https://razorpay.com/docs/api/payments/payment-links/create-upi) to to create a UPI Payment Link using basic details such as amount, expiry date, reference id, description, customer details and so on."
+			},
+			"response": [
+				{
+					"name": "Create a UPI Payment Link",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"upi_link\": \"true\",\n  \"amount\": 1000,\n  \"currency\": \"INR\",\n  \"accept_partial\": false,\n  \"expire_by\": 1791097057,\n  \"reference_id\": \"TS1999\",\n  \"description\": \"Payment for policy no #23456\",\n  \"customer\": {\n    \"name\": \"Gaurav Kumar\",\n    \"contact\": \"+919000090000\",\n    \"email\": \"gaurav.kumar@example.com\"\n  },\n  \"notify\": {\n    \"sms\": true,\n    \"email\": true\n  },\n  \"reminder_enable\": true,\n  \"notes\": {\n    \"policy_name\": \"Jeevan Bima\"\n  },\n  \"callback_url\": \"https://example-callback-url.com/\",\n  \"callback_method\": \"get\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.razorpay.com/v1/payment_links",
+							"protocol": "https",
+							"host": [
+								"api",
+								"razorpay",
+								"com"
+							],
+							"path": [
+								"v1",
+								"payment_links"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "Text",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 13:06:31 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, must-revalidate, no-store, nocache, private"
+						},
+						{
+							"key": "Expires",
+							"value": "Fri, 01 Jan 1990 00:00:00 GMT"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=315360000; includeSubDomains"
+						},
+						{
+							"key": "Uber-Trace-Id",
+							"value": "d3634fee2124cfcb2746728bf64e57ef:65709a3760ea0d57:0000000000000000:1"
+						},
+						{
+							"key": "Via",
+							"value": "rws"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Pam",
+							"value": "0"
+						},
+						{
+							"key": "X-Xss-Protection",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accept_partial\": false,\n    \"amount\": 1000,\n    \"amount_paid\": 0,\n    \"callback_method\": \"get\",\n    \"callback_url\": \"https://example-callback-url.com/\",\n    \"cancelled_at\": 0,\n    \"created_at\": 1755695191,\n    \"currency\": \"INR\",\n    \"customer\": {\n        \"contact\": \"+919000090000\",\n        \"email\": \"gaurav.kumar@example.com\",\n        \"name\": \"Gaurav Kumar\"\n    },\n    \"description\": \"Payment for policy no #23456\",\n    \"expire_by\": 1771592791,\n    \"expired_at\": 0,\n    \"first_min_partial_amount\": 0,\n    \"id\": \"plink_R7bDdM4YSVItBV\",\n    \"notes\": {\n        \"policy_name\": \"Jeevan Bima\"\n    },\n    \"notify\": {\n        \"email\": true,\n        \"sms\": true,\n        \"whatsapp\": false\n    },\n    \"payments\": null,\n    \"reference_id\": \"TS1999\",\n    \"reminder_enable\": true,\n    \"reminders\": [],\n    \"short_url\": \"https://rzp.io/rzp/Q6NFBosa\",\n    \"status\": \"created\",\n    \"updated_at\": 1755695191,\n    \"upi_link\": true,\n    \"user_id\": \"\",\n    \"whatsapp_link\": false\n}"
+				}
+			]
+		}
+	]
+}
