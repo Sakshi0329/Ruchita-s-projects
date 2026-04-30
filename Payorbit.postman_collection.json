@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "8617d439-74aa-41c2-a6e4-61b7f33bfad6",
+		"name": "Payorbit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50976706",
+		"_collection_link": "https://ruchitanjaliduvva-6024298.postman.co/workspace/Ruchitanjali-Duvva's-Workspace~8fbb66fc-aa98-45f2-88b8-c50e59e4341b/collection/50976706-8617d439-74aa-41c2-a6e4-61b7f33bfad6?action=share&source=collection_link&creator=50976706"
+	},
+	"item": [
+		{
+			"name": "Generate Static QR",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTUyMzI4MGY3NjY5MGNjNGVhMzI2YzIiLCJwYXNzd29yZCI6ImFrYXNoQDEyMzQ1IiwiaWF0IjoxNzY2OTk0NTYxfQ.OIcvYLHdZ9wE_4loOVm7cZF8FPUnBFfah151vTmytbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"txnRefId\": \"TXN000001\",\r\n    \"txnNote\": \"QR For Payment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://pg-merchant-backend.vercel.app/api/transactions/generate-static-qr",
+					"protocol": "http",
+					"host": [
+						"pg-merchant-backend",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"transactions",
+						"generate-static-qr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Dynamic QR",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTUyMzI4MGY3NjY5MGNjNGVhMzI2YzIiLCJwYXNzd29yZCI6ImFrYXNoQDEyMzQ1IiwiaWF0IjoxNzY2OTk0NTYxfQ.OIcvYLHdZ9wE_4loOVm7cZF8FPUnBFfah151vTmytbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"txnRefId\": \"TXN000001\",\r\n  \"amount\": \"500\",\r\n  \"txnNote\": \"Dynamic QR API\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://pg-merchant-backend.vercel.app/api/transactions/generate-dynamic-qr",
+					"protocol": "http",
+					"host": [
+						"pg-merchant-backend",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"transactions",
+						"generate-dynamic-qr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Payment Link",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTUyMzI4MGY3NjY5MGNjNGVhMzI2YzIiLCJwYXNzd29yZCI6ImFrYXNoQDEyMzQ1IiwiaWF0IjoxNzY2OTk0NTYxfQ.OIcvYLHdZ9wE_4loOVm7cZF8FPUnBFfah151vTmytbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"txnRefId\": \"TXN000001\",\r\n  \"amount\": \"500\",\r\n  \"currency\": \"INR\",\r\n  \"paymentMethod\": \"UPI\",\r\n  \"paymentOption\": \"UPI Collect\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://pg-merchant-backend.vercel.app/api/transactions/generate-payment-link",
+					"protocol": "http",
+					"host": [
+						"pg-merchant-backend",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"transactions",
+						"generate-payment-link"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

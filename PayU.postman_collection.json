@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "8e083316-bca3-4e09-aabe-1b501d761c6f",
+		"name": "PayU",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33824564"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Static QR Request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "key",
+							"value": "J***g",
+							"type": "text"
+						},
+						{
+							"key": "command",
+							"value": "generate_insta_account",
+							"type": "text"
+						},
+						{
+							"key": "hash",
+							"value": "b7815c44e1852d76322730a483c0b51d39b0657ed90e01da6108bf60249e6da9f8c5a4b0ffbb7f6c7b6d772ed1c8b2984f9be6ef037b142a391221186b5ce3c2",
+							"type": "text"
+						},
+						{
+							"key": "var1",
+							"value": "{\"name\":\"BFL Live test\",\"merchantVpa\":\"bfltestqr.6879728.prod12@indus\",\"qrType\":\"upi\",\"city\":\"South West\",\"pinCode\":\"122002\",\"address\":\"sector 46\",\"udf5\":\"BFL113\",\"instaProduct\":\"qr\",\"submerchantRegistration\":\"1\",\"mebussname\":\"Suniltest1\",\"outputType\":\"string\",\"awlmcc\":\"7999\",\"legalStrName\":\"Testaly\",\"panNo\":\"BPEPK5431F\",\"strCntMobile\":\"9833208174\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://info.payu.in/merchant/postservice.php",
+					"protocol": "https",
+					"host": [
+						"info",
+						"payu",
+						"in"
+					],
+					"path": [
+						"merchant",
+						"postservice.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dynamic QR Request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "content-type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "key",
+							"value": "JPM7Fg",
+							"type": "text"
+						},
+						{
+							"key": "txnid",
+							"value": "aso6787",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "100.00",
+							"type": "text"
+						},
+						{
+							"key": "productinfo",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "Ashish",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "Kumar",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "934123456",
+							"type": "text"
+						},
+						{
+							"key": "pg",
+							"value": "DBQR",
+							"type": "text"
+						},
+						{
+							"key": "bankcode",
+							"value": "UPIDBQR",
+							"type": "text"
+						},
+						{
+							"key": "hash",
+							"value": "8b58ae0706c955d870f2ce7d9ee25bae5c6711436b64074ad35e07a6a3f669d2d2b32259607109ea59fd07e9df60af544221b3edddc955b2e97dd177e6536321",
+							"type": "text"
+						},
+						{
+							"key": "s2s_client_ip",
+							"value": "192.1.1.1",
+							"type": "text"
+						},
+						{
+							"key": "s2s_device_info",
+							"value": "Mozilla",
+							"type": "text"
+						},
+						{
+							"key": "txn_s2s_flow",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "expiry_time",
+							"value": "30",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test.payu.in/_paymentFirefox",
+					"protocol": "https",
+					"host": [
+						"test",
+						"payu",
+						"in"
+					],
+					"path": [
+						"_paymentFirefox"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Link Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "merchantId",
+						"value": "{{merchantId}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"subAmount\":2,\n  \"isPartialPaymentAllowed\":false,\n  \"description\":\"paymentLink for testing\",\n  \"source\":\"API\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://uatoneapi.payu.in/payment-links/",
+					"protocol": "https",
+					"host": [
+						"uatoneapi",
+						"payu",
+						"in"
+					],
+					"path": [
+						"payment-links",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
