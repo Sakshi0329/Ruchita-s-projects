@@ -1,0 +1,95 @@
+/* .rzp-page {
+  padding: 14px;
+} */
+
+.rzp-card {
+  background: linear-gradient(135deg, #0b0f3b, #111c72);
+  border-radius: 20px;
+  padding: 0px 60px;
+  min-height: 520px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: white;
+}
+
+/* LEFT */
+
+.rzp-content {
+  max-width: 520px;
+}
+
+.rzp-logo {
+  width: 140px;
+  margin-bottom: 30px;
+}
+
+.rzp-content h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.5cm;
+}
+
+.rzp-content p {
+  font-size: 16px;
+  opacity: 0.85;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+/* BUTTONS */
+
+.rzp-btn-group {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.rzp-btn {
+  padding: 14px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.rzp-btn.primary {
+  background: white;
+  color: #0b0f3b;
+  border: none;
+}
+
+.rzp-btn.secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.rzp-back {
+  font-size: 14px;
+  color: #9ecbff;
+  cursor: pointer;
+}
+
+/* RIGHT IMAGE */
+
+.rzp-image img {
+  width: 420px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .rzp-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .rzp-image img {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
