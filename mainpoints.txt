@@ -1,0 +1,11 @@
+Check the following points with the Mongo db 
+1. Fetch internet IP of visitor and enter with the session table 
+2. Add to Cart or wishlist should be enter into the relevant tables along with IP and location 
+3. If the user is log in then fetch user table row I'd and insert into the card and wishlist table
+4. When user is getting created then status should be 0 and fetch the IP and location
+5. When user do the login then insert user row and and email add against session and token 
+6. Do cross check the inserted data with above mentioned tables
+Add to Cart *order status* should be added to cart.
+Add to wishlist *order status* should be added to wishlist.
+If the user clicking on the check out Added to check out.
+Check session activity and expiry

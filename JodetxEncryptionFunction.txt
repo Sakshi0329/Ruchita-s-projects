@@ -1,0 +1,44 @@
+import * as crypto from 'crypto';
+ 
+class CryptoJSAES {
+ 
+    public static OpenSSLEncrypt(plainText: string, passphrase: string, KeySize: number = 256): string {
+        // console.log(`OpenSSLEncrypt` , plainText, passphrase);
+        // generate salt
+        const salt = crypto.randomBytes(8);
+        const { key, iv } = this.DeriveKeyAndIV(passphrase, salt, KeySize);
+        // encrypt bytes
+        const cipher = crypto.createCipheriv('aes-' + KeySize + '-cbc', key, iv);
+        let encrypted = cipher.update(plainText, 'utf8', 'base64');
+        encrypted += cipher.final('base64');
+        // add salt as first 8 bytes
+        const encryptedBytesWithSalt = Buffer.concat([Buffer.from("Salted__"), salt, Buffer.from(encrypted, 'base64')]);
+        // base64 encode
+        return encryptedBytesWithSalt.toString('base64');
+    }
+ 
+    public static OpenSSLDecrypt(encrypted: string, passphrase: string, KeySize: number = 256): string {
+        // console.log(`OpenSSLDecrypt`, encrypted, passphrase);
+        // base 64 decode
+        const encryptedBytesWithSalt = Buffer.from(encrypted, 'base64');
+        // extract salt (first 8 bytes of encrypted)
+        const salt = encryptedBytesWithSalt.slice(8, 16);
+        const encryptedBytes = encryptedBytesWithSalt.slice(16);
+        // get key and iv
+        const { key, iv } = this.DeriveKeyAndIV(passphrase, salt, KeySize);
+        // decrypt bytes
+        const decipher = crypto.createDecipheriv('aes-' + KeySize + '-cbc', key, iv);
+        let decrypted = decipher.update(encryptedBytes);
+        decrypted = Buffer.concat([decrypted, decipher.final()]);
+        return decrypted.toString('utf8');
+    }
+ 
+    private static DeriveKeyAndIV(passphrase: string, salt: Buffer, KeySize: number): { key: Buffer; iv: Buffer } {
+        // generate key and iv
+        const key = crypto.pbkdf2Sync(passphrase, salt, 10000, KeySize / 8, 'sha1');
+        const iv = crypto.pbkdf2Sync(passphrase, salt, 10000, 16, 'sha1');
+        return { key, iv };
+    }
+}
+ 
+export default CryptoJSAES;

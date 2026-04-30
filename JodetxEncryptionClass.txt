@@ -1,0 +1,22 @@
+import { Injectable } from '@nestjs/common';
+import CryptoJSAES from 'src/shared/encryptAes/encryptaes';
+ 
+@Injectable()
+export class DataAesService {
+ 
+ 
+    async encGenerate(data: any,header: any): Promise<any> {
+        const encrypt = await CryptoJSAES.OpenSSLEncrypt(JSON.stringify(data), `${header.apikey}`);
+        return encrypt
+    }
+ 
+    async decrypt(data: any,header: any): Promise<any> {
+        try {
+            const decrypted = CryptoJSAES.OpenSSLDecrypt(data.encryptedData, `${header.apikey}`);        
+            return decrypted   
+        } catch (error) {
+            return 'Parsing error'
+        }
+    }
+}
+
