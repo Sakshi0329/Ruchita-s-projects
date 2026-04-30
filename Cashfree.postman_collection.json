@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "d1957e0b-3bfb-47d0-adea-8c4d5fbaf3ea",
+		"name": "Cashfree",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33824564"
+	},
+	"item": [
+		{
+			"name": "Create Payment link",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-api-version",
+						"value": "2025-01-01"
+					},
+					{
+						"key": "x-client-id",
+						"value": "163390fe7d8a35ea6789954654093361"
+					},
+					{
+						"key": "x-client-secret",
+						"value": "cfsk_ma_prod_6b331b763927226c080a22edd6d2da76_4526311f"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n  \"customer_details\": {\r\n    \"customer_email\": \"john@cashfree.com\",\r\n    \"customer_name\": \"John Doe\",\r\n    \"customer_phone\": \"9999999999\"\r\n  },\r\n  \"link_amount\": 100,\r\n  \"link_auto_reminders\": true,\r\n  \"link_currency\": \"INR\",\r\n  \"link_expiry_time\": \"2025-12-19T15:04:05+05:30\",\r\n  \"link_id\": \"123\",\r\n  \"link_meta\": {\r\n    \"notify_url\": \"https://ee08e626ecd88c61c85f5c69c0418cb5.m.pipedream.net\",\r\n    \"return_url\": \"https://www.cashfree.com/devstudio/thankyou\",\r\n    \"upi_intent\": false\r\n  },\r\n  \"link_minimum_partial_amount\": 20,\r\n  \"link_notes\": {\r\n    \"key_1\": \"value_1\",\r\n    \"key_2\": \"value_2\"\r\n  },\r\n  \"link_notify\": {\r\n    \"send_email\": true,\r\n    \"send_sms\": false\r\n  },\r\n  \"link_partial_payments\": true,\r\n  \"link_purpose\": \"Payment for PlayStation 11\",\r\n  \"order_splits\": [\r\n    {\r\n      \"vendor_id\": \"Jane\",\r\n      \"amount\": 1.45,\r\n      \"tags\": {\r\n        \"address\": \"Hyderabad\"\r\n      }\r\n    },\r\n    {\r\n      \"vendor_id\": \"Barbie\",\r\n      \"amount\": 3.45,\r\n      \"tags\": {\r\n        \"address\": \"Bengaluru, India\"\r\n      }\r\n    }\r\n  ],\r\n  \"enable_invoice\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.cashfree.com/pg/links",
+					"protocol": "https",
+					"host": [
+						"api",
+						"cashfree",
+						"com"
+					],
+					"path": [
+						"pg",
+						"links"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

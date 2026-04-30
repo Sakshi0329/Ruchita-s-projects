@@ -1,0 +1,64 @@
+Razorpay account
+info@ekodextechnologies.com
+ekodex@12345
+
+admin@tps.com
+12345
+
+Admin
+demo@ecolods.com
+demo@12345
+TPS
+kpk
+
+HR
+ekodex@gmail.com
+ekodex@12345
+ekodex
+Ghansoli
+
+Admin
+abcd@gmail.com
+abcd@123
+Eco
+Ghansoli
+
+HR
+xyz@gmail.com
+xyz@12345
+Eco
+Ghansoli
+
+HRMS(PHP)
+ruchi@gmail.com
+ruchi@123
+
+ruchitas@gmail.com
+ruchi@12345
+
+Easynxt 
+demo@ecolods.com
+demo@12345
+
+Ekodex CMS Admin
+demo123@ecolods.com
+12345678
+
+old mainlayout color: #f8fafc
+new mainlayout color: #f0f2f5
+
+toggle button color: #111111 ==> hover color: 	#020202
+
+header title, user-info: #2f2f2f
+
+logout button color : #2f2f2f  ==> hover color: #ef4444
+
+logo color: #303262, #28599c
+	
+email is accepted empty in branches but unique which accepts only 1 empty email and next time it throws error - done
+
+User access settings is not working - done
+
+Attendance create invoice logic check again regarding gst
+
+Check in client sites rate logic
